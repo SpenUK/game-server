@@ -1,0 +1,24 @@
+{
+  "name": "socket-controller-server",
+  "version": "0.0.1",
+  "author": "Spen Taylor <spen_@hotmail.co.uk> (www.spentaylor.com)",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "express": "^4.11.2",
+    "express-handlebars": "^2.0.1",
+    "socket.io": "latest",
+    "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "node app/server/server.js"
+  },
+  "devDependencies": {
+
+  }
+}

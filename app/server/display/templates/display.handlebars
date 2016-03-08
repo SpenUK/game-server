@@ -1,0 +1,98 @@
+<div class="token-container" style="text-align: center; margin: 20px auto;">
+</div>
+
+<div id="qr" style="text-align: center;">
+</div>
+
+<div class="controllers"></div>
+
+<script type="text/javascript">
+
+function displayToken (token) {
+	var message = token ? 'Token: ' + token : 'Waiting for token...';
+	$('.token-container').html($('<a href="/controller/' + token + '" target="_blank">').html(message));
+
+	if (token) {
+		var qrcode = new QRCode(document.getElementById("qr"), {
+		    text: window.location.origin + '/controller/' + token,
+		    width: 256,
+		    height: 256,
+		    colorDark : "#222",
+		    colorLight : "#ffffff",
+		    correctLevel : QRCode.CorrectLevel.H
+		});
+	}
+
+}
+
+function updateController (params) {
+	console.log(params);
+	var position = params.position;
+	var value = params.value;
+	var $el = $('#controller-' + position);
+	if ($el.length) {
+		$el.find('.value').html(position + ': ' + value);
+	} else {
+		var $controller = $('<div id="controller-' + position + '">').html($('<div class="value">').html(position + ': ' + value));
+
+		$('.controllers').append($controller);
+	}
+}
+
+var controllers = {};
+
+function addController (id, color) {
+	console.log('adding:', id);
+	controllers[id] = {
+		color: color
+	}
+
+	updateController({
+		id: id,
+		color: color
+	});
+}
+
+function removeController (id) {
+	console.log('removing:', id);
+	controllers[id] = null;
+}
+
+// function updateController () {}
+
+$(document).ready(function(){
+
+	displayToken();
+
+	socket.emit('display');
+
+	socket.on('token created', function(token){
+	   displayToken(token);
+	});
+
+	socket.on('controller:joined', function(controllerObject) {
+	   console.log(controllerObject);
+	});
+
+	socket.on('controller joined', function(id){
+	   console.log(id + ' joined');
+	});
+
+	socket.on('controller left', function(id){
+	   console.log(id + ' left');
+	});
+
+	socket.on('controller feedback', function(params){
+	   	updateController({
+	   		params.id,
+	   		params.color,
+	   		params.value
+	   	});
+	});
+
+	// socket.on('controller feedback', function(params){
+	//    console.log(params);
+	// });
+});
+
+</script>

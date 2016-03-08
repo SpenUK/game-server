@@ -1,0 +1,11 @@
+.sass-cache/
+*.swp
+.DS_Store
+
+client/
+
+app/public/css/
+app/public/js/
+
+node_modules
+npm-debug.log

@@ -1,4 +1,5 @@
-var mapData = require('../../../gamedata/examplegame1/game');
+var mapData = require('../../../gamedata/examplegame1/game'),
+	playerData = require('../../../gamedata/exampleplayer');
 
 exports.display = function(req, res){
 	var stylesheets = [
@@ -18,7 +19,8 @@ exports.display = function(req, res){
 		stylesheets: stylesheets,
 		scripts: scripts,
 		initialData: JSON.stringify({
-			map: mapData
+			map: mapData,
+			player: playerData
 		})
 	});
 };

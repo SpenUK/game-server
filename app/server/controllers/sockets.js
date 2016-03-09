@@ -37,10 +37,6 @@ var controllerInitialize =  function (token) {
   		console.log('not joined');
   	}
 
-  	this.removeListener('disconnect', onDisconnect);
-
-  	this.on('disconnect', onControllerDisconnect.bind(this));
-
 };
 
 var sendBackMessage = function (message) {
@@ -95,7 +91,7 @@ var onDisplayDisconnect = function(socket){
 }
 
 var onControllerDisconnect = function(socket){
-    console.log('controller user disconnected');
+    console.log('controller user disconnected', socket.hostToken);
 	roomController.leaveRoom(socket.hostToken, socket);
 }
 
@@ -109,8 +105,6 @@ var onConnection = function (socket) {
 	socket.on('display initialize', displayInitialize.bind(socket));
 
 	socket.on('controller initialize', controllerInitialize.bind(socket));
-
-	socket.on('message test', sendBackMessage.bind(socket));
 
 	socket.on('request token', requestToken.bind(socket));
 

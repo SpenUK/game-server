@@ -92,12 +92,15 @@ var roomController = {
 
 	leaveRoom: function (token, controllerSocket) {
 		var room = this.rooms[token];
+		console.log('leaveRoom');
 		if (room) {
-
+			console.log('leaveRoom');
 			room.host.emit('controller left', controllerSocket.id);
 			this.rooms[token].connections = _.without(room.connections, controllerSocket);
 
 			return true;
+		} else {
+			console.log('no room');
 		}
 
 		return false;

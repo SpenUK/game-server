@@ -27,11 +27,14 @@ var controllerInitialize =  function (token) {
   	var joined = roomController.joinRoom(token, this);
 
   	if (joined) {
+  		console.log('joined');
   		this.emit('controller joined');
   		this.on('control', onControl.bind(this));
 
   		controllerSocketHandler.applySocket(this);
 
+  	} else {
+  		console.log('not joined');
   	}
 
   	this.removeListener('disconnect', onDisconnect);

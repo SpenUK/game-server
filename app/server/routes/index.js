@@ -1,3 +1,5 @@
+var mapData = require('../../../gamedata/examplegame1/game');
+
 exports.display = function(req, res){
 	var stylesheets = [
 		'/css/core.css',
@@ -14,7 +16,10 @@ exports.display = function(req, res){
 	res.render('display', {
 		title: 'Display',
 		stylesheets: stylesheets,
-		scripts: scripts
+		scripts: scripts,
+		initialData: JSON.stringify({
+			map: mapData
+		})
 	});
 };
 

@@ -1,10 +1,10 @@
 var _ = require('underscore');
 
-var colorValues = ['#ff5a6e', '#00c8b4', '#244454', '#de7e44', '#0e7e44', '#0e7ec4'];
+// var colorValues = ['#ff5a6e', '#00c8b4', '#244454', '#de7e44', '#0e7e44', '#0e7ec4'];
 
 var roomController = {
 
-	roomCapacity: 5,
+	roomCapacity: 1,
 
 	rooms: {},
 
@@ -56,6 +56,7 @@ var roomController = {
 	},
 
 	joinRoom: function (token, controllerSocket) {
+		console.log('joinRoom called');
 		var room = this.rooms[token];
 		if (!room) {
 			// no room exists
@@ -63,14 +64,22 @@ var roomController = {
 			return false;
 		}
 
+		console.log('room found');
+
 		if (room.connections.length < this.roomCapacity) {
 			// room exists and can be joined
-			controllerSocket.color = colorValues.shift();
+			console.log('can join');
 			controllerSocket.join(token);
 
 			room.connections.push(controllerSocket);
 
+			console.log('room.connections ' + room.connections.length, !!room.host);
+
+			room.host.emit('controller joined');
+
 			console.log('joined room:', room.host.id, room.connections.length);
+
+
 
 			return true;
 		}
@@ -85,11 +94,7 @@ var roomController = {
 		var room = this.rooms[token];
 		if (room) {
 
-			if (controllerSocket.color) {
-				colorValues.push(controllerSocket.color);
-			}
-
-			room.host.emit('controller left', controllerSocket.id, controllerSocket.color);
+			room.host.emit('controller left', controllerSocket.id);
 			this.rooms[token].connections = _.without(room.connections, controllerSocket);
 
 			return true;

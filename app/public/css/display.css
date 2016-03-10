@@ -7,12 +7,21 @@ body {
   background-color: white;
   border: 5px solid rgba(0, 0, 0, 0.2); }
 
+.game .environment {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block; }
 .game .game-canvas {
   position: absolute;
   left: 0;
   top: 0; }
   .game .game-canvas#base {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.1); }
+    z-index: 2000; }
+  .game .game-canvas#props {
+    z-index: 2002; }
+  .game .game-canvas#player {
+    z-index: 2002; }
+  .game .game-canvas#cover {
+    z-index: 2003; }
 
 /*# sourceMappingURL=display.css.map */

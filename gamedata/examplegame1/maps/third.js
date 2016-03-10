@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	name: 'third',
+	title: 'third',
 	tileSet: {
 		src: 'images/exampleTileSet.png',
 		tilesX: 4,

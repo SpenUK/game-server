@@ -6,6 +6,7 @@ body {
   overflow: hidden;
   width: 330px;
   margin: 20px auto;
+  padding-bottom: 6px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

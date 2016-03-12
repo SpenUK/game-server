@@ -3,7 +3,7 @@ var roomController = require('./rooms');
 var controllerSocketHandler = require('./controllerhandler');
 
 var displayInitialize = function () {
-	console.log('display initialize', this.token);
+	// console.log('display initialize', this.token);
 
 	var hosting = roomController.hostRoom(this.token, this);
   	this.display = true;
@@ -18,7 +18,7 @@ var displayInitialize = function () {
 };
 
 var controllerInitialize =  function (token) {
-	console.log('controller initialize', token);
+	// console.log('controller initialize', token);
 
 	this.controller = true;
 
@@ -27,7 +27,7 @@ var controllerInitialize =  function (token) {
   	var joined = roomController.joinRoom(token, this);
 
   	if (joined) {
-  		console.log('joined');
+  		// console.log('joined');
   		this.emit('controller joined');
   		this.on('control:down', onControlDown.bind(this));
   		this.on('control:up', onControlUp.bind(this));
@@ -35,7 +35,7 @@ var controllerInitialize =  function (token) {
   		controllerSocketHandler.applySocket(this);
 
   	} else {
-  		console.log('not joined');
+  		// console.log('not joined');
   	}
 
 };
@@ -59,7 +59,7 @@ var requestToken = function () {
 }
 
 var onControlDown = function (message) {
-	console.log('control-down:', message, this.token);
+	// console.log('control-down:', message, this.token);
 	this.broadcast.emit('control down', {
 		message: message,
 		token: this.token
@@ -67,7 +67,7 @@ var onControlDown = function (message) {
 }
 
 var onControlUp = function (message) {
-	console.log('control-up:', message, this.token);
+	// console.log('control-up:', message, this.token);
 	this.broadcast.emit('control up', {
 		message: message,
 		token: this.token
@@ -81,7 +81,7 @@ var onControlUp = function (message) {
 
 var onDisconnect = function(socket){
 	var room = roomController.rooms[this.token];
-    console.log('user disconnected', socket.token);
+    // console.log('user disconnected', socket.token);
 
     if (this.display) {
     	tokenController.removeToken(this.token);
@@ -94,13 +94,13 @@ var onDisconnect = function(socket){
 }
 
 var onDisplayDisconnect = function(socket){
-	console.log(this.token + ' disconnected');
+	// console.log(this.token + ' disconnected');
 	tokenController.removeToken(this.token);
 	roomController.closeRoom(this.token, this);
 }
 
 var onControllerDisconnect = function(socket){
-    console.log('controller user disconnected', socket.hostToken);
+    // console.log('controller user disconnected', socket.hostToken);
 	roomController.leaveRoom(socket.hostToken, socket);
 }
 

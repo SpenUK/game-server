@@ -12,7 +12,7 @@ var roomController = {
 		var room = this.rooms[token];
 		if (!room) {
 			// room is free
-			console.log('creating room');
+			// console.log('creating room');
 			hostSocket.join(token);
 
 			this.rooms[token] = {
@@ -32,7 +32,7 @@ var roomController = {
 		var room = this.rooms[token];
 
 		if (!room) {
-			console.log('room does not exist');
+			// console.log('room does not exist');
 			return true;
 		}
 
@@ -45,39 +45,39 @@ var roomController = {
 
 			this.rooms[token] = null;
 
-			console.log('removed:', !!this.rooms[token]);
+			// console.log('removed:', !!this.rooms[token]);
 
 			return true;
 		} else {
-			console.log('not host');
+			// console.log('not host');
 		}
 
 		return false;
 	},
 
 	joinRoom: function (token, controllerSocket) {
-		console.log('joinRoom called');
+		// console.log('joinRoom called');
 		var room = this.rooms[token];
 		if (!room) {
 			// no room exists
-			console.log('room doesnt exist');
+			// console.log('room doesnt exist');
 			return false;
 		}
 
-		console.log('room found');
+		// console.log('room found');
 
 		if (room.connections.length < this.roomCapacity) {
 			// room exists and can be joined
-			console.log('can join');
+			// console.log('can join');
 			controllerSocket.join(token);
 
 			room.connections.push(controllerSocket);
-
-			console.log('room.connections ' + room.connections.length, !!room.host);
+//
+			// console.log('room.connections ' + room.connections.length, !!room.host);
 
 			room.host.emit('controller joined');
 
-			console.log('joined room:', room.host.id, room.connections.length);
+			// console.log('joined room:', room.host.id, room.connections.length);
 
 
 
@@ -85,22 +85,22 @@ var roomController = {
 		}
 		// room exists but is full
 		//
-		console.log('room is full:', room.connections.length);
+		// console.log('room is full:', room.connections.length);
 
 		return false;
 	},
 
 	leaveRoom: function (token, controllerSocket) {
 		var room = this.rooms[token];
-		console.log('leaveRoom');
+		// console.log('leaveRoom');
 		if (room) {
-			console.log('leaveRoom');
+			// console.log('leaveRoom');
 			room.host.emit('controller left', controllerSocket.id);
 			this.rooms[token].connections = _.without(room.connections, controllerSocket);
 
 			return true;
 		} else {
-			console.log('no room');
+			// console.log('no room');
 		}
 
 		return false;

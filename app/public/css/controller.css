@@ -4,26 +4,12 @@ body {
 .controls {
   overflow: hidden;
   width: 210px;
-  margin: 20px auto;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 0; }
+  margin: 20px auto; }
   .controls .control {
     width: 60px;
     height: 60px;
     margin: 5px;
-    float: left;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    outline: 0; }
+    float: left; }
     .controls .control div.button {
       background-color: rgba(1, 1, 1, 0.2);
       text-align: center;

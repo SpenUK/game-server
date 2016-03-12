@@ -1,27 +1,85 @@
 body {
   background-color: #2878a0; }
 
-.qrcode {
+.game {
+  position: relative;
+  margin: 0 auto;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  box-sizing: content-box; }
+  .game .environment {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    width: 100%;
+    height: 100%; }
+  .game .game-canvas {
+    position: absolute;
+    left: 0;
+    top: 0; }
+    .game .game-canvas#base {
+      z-index: 2000; }
+    .game .game-canvas#props {
+      z-index: 2002; }
+    .game .game-canvas#player {
+      z-index: 2002; }
+    .game .game-canvas#cover {
+      z-index: 2003; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3000;
+  display: none; }
+
+.modal__container {
+  min-height: 300px;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border-radius: 8px;
+  background-color: white;
+  display: block;
+  position: relative;
+  box-shadow: 0 3px #cccccc; }
+
+.modal__button--dismiss {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: #c86464;
+  text-align: center;
+  font-size: 1.5em;
+  box-shadow: 0 3px #923434;
+  border-radius: 4px; }
+  .modal__button--dismiss:active {
+    margin-top: 2px;
+    box-shadow: 0 1px #923434; }
+  .modal__button--dismiss i {
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 3px #923434; }
+
+.modal__shader {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.qr-code {
   display: inline-block;
   padding: 5px;
   background-color: white;
   border: 5px solid rgba(0, 0, 0, 0.2); }
-
-.game .environment {
-  background-color: rgba(255, 255, 255, 0.1);
-  display: inline-block; }
-.game .game-canvas {
-  position: absolute;
-  left: 0;
-  top: 0; }
-  .game .game-canvas#base {
-    position: relative;
-    z-index: 2000; }
-  .game .game-canvas#props {
-    z-index: 2002; }
-  .game .game-canvas#player {
-    z-index: 2002; }
-  .game .game-canvas#cover {
-    z-index: 2003; }
 
 /*# sourceMappingURL=display.css.map */

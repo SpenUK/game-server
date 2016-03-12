@@ -1,5 +1,6 @@
 body {
-  background-color: #2878a0; }
+  background-color: #2878a0;
+  -webkit-tap-highlight-color: transparent; }
 
 .controls {
   overflow: hidden;

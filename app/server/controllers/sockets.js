@@ -29,7 +29,8 @@ var controllerInitialize =  function (token) {
   	if (joined) {
   		console.log('joined');
   		this.emit('controller joined');
-  		this.on('control', onControl.bind(this));
+  		this.on('control:down', onControlDown.bind(this));
+  		this.on('control:up', onControlUp.bind(this));
 
   		controllerSocketHandler.applySocket(this);
 
@@ -57,9 +58,17 @@ var requestToken = function () {
 	}
 }
 
-var onControl = function (message) {
-	console.log('control: ', message, this.token);
-	this.broadcast.emit('control press', {
+var onControlDown = function (message) {
+	console.log('control-down:', message, this.token);
+	this.broadcast.emit('control down', {
+		message: message,
+		token: this.token
+	});
+}
+
+var onControlUp = function (message) {
+	console.log('control-up:', message, this.token);
+	this.broadcast.emit('control up', {
 		message: message,
 		token: this.token
 	});

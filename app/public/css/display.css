@@ -44,6 +44,7 @@ body {
   background-color: white;
   display: block;
   position: relative;
+  padding: 15px;
   box-shadow: 0 3px #cccccc; }
 
 .modal__button--dismiss {
@@ -76,9 +77,14 @@ body {
   left: 0;
   right: 0; }
 
+.qr {
+  text-align: center; }
+
 .qr-code {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   padding: 5px;
+  width: 275px;
   background-color: white;
   border: 5px solid rgba(0, 0, 0, 0.2); }
 

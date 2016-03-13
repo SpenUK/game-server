@@ -21,14 +21,18 @@ var controllerInitialize =  function (token) {
 
 	this.hostToken = token;
 
+	console.log('controller init', token);
+
   	var joined = roomController.joinRoom(token, this);
 
-  	if (joined) {
+  	if (joined === true) {
   		this.emit('controller joined');
   		this.on('control:down', onControlDown.bind(this));
   		this.on('control:up', onControlUp.bind(this));
 
   		controllerSocketHandler.applySocket(this);
+  	} else {
+  		this.emit('controller rejected', joined.error);
   	}
 };
 
@@ -38,6 +42,15 @@ var requestToken = function () {
 			token: this.token
 		});
 	}
+}
+
+var requestHost = function (token) {
+	// if (this.display) {
+	// 	this.emit('token generated', {
+	// 		token: this.token
+	// 	});
+	// }
+	console.log('requested host:', token);
 }
 
 var onControlDown = function (message) {

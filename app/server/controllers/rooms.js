@@ -43,12 +43,13 @@ var roomController = {
 	},
 
 	joinRoom: function (token, controllerSocket) {
-		var room = this.rooms[token];
+		var room = this.rooms[token],
+			errorMessage;
 		if (!room) {
-			return false;
-		}
+			errorMessage = 'No host found for: ' + token;
 
-		if (room.connections.length < this.roomCapacity) {
+		} else if (room.connections.length < this.roomCapacity) {
+
 			controllerSocket.join(token);
 
 			room.connections.push(controllerSocket);
@@ -56,9 +57,14 @@ var roomController = {
 			room.host.emit('controller joined');
 
 			return true;
+
+		} else {
+			errorMessage = 'Room full for host: ' + token;
 		}
 
-		return false;
+		return {
+			error: errorMessage
+		};
 	},
 
 	leaveRoom: function (token, controllerSocket) {

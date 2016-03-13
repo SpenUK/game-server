@@ -1,6 +1,117 @@
 body {
   background-color: #2878a0;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  margin: 0; }
+
+.controller {
+  height: 100%;
+  width: 100%; }
+
+.token-input {
+  position: absolute;
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+form.token-input__form {
+  font-size: 1.2em;
+  position: relative;
+  max-width: 100%;
+  padding: 20px;
+  width: 400px;
+  margin: 0 auto;
+  vertical-align: middle;
+  display: table-cell; }
+  form.token-input__form input, form.token-input__form textarea {
+    transition: opacity 0.5s linear; }
+  form.token-input__form input, form.token-input__form input:focus {
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    font-size: 1.4em;
+    text-align: center;
+    -webkit-box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 8px auto;
+    padding: 0.2em 0.6em;
+    background-color: #fff; }
+  form.token-input__form textarea, form.token-input__form textarea:focus {
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    -webkit-box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 8px auto;
+    padding: 0.7em 0.6em;
+    background-color: #fff; }
+  form.token-input__form button.submit {
+    margin-top: 20px;
+    position: relative;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: white;
+    padding: 0.5em;
+    background-color: #ff5a6e;
+    -webkit-box-shadow: 0 4px 0 #ff0e2b;
+    -moz-box-shadow: 0 4px 0 #ff0e2b;
+    box-shadow: 0 4px 0 #ff0e2b;
+    text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1.4em; }
+    form.token-input__form button.submit i {
+      display: none;
+      margin: 0 auto;
+      font-size: 1.2em; }
+    form.token-input__form button.submit:active {
+      top: 3px;
+      -webkit-box-shadow: 0 1px 0 #ff0e2b;
+      -moz-box-shadow: 0 1px 0 #ff0e2b;
+      box-shadow: 0 1px 0 #ff0e2b; }
+  form.token-input__form i {
+    width: 50px;
+    text-align: center; }
+  form.token-input__form .submission-error {
+    background-color: #d72828;
+    box-shadow: 0 2px 0 #971c1c;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    height: 50px;
+    line-height: 50px;
+    min-width: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    padding: 0 .25em;
+    vertical-align: top;
+    margin: 8px auto;
+    color: #fff;
+    padding: 0 50px;
+    display: none; }
+    form.token-input__form .submission-error * {
+      line-height: inherit;
+      margin: 0; }
+    form.token-input__form .submission-error .fa-close {
+      cursor: pointer; }
+      form.token-input__form .submission-error .fa-close:hover {
+        font-size: 1.2em; }
+  form.token-input__form .field.error input, form.token-input__form .field.error textarea {
+    background-color: #ffe1e1;
+    -webkit-box-shadow: 0 4px 0 #ff9595;
+    -moz-box-shadow: 0 4px 0 #ff9595;
+    box-shadow: 0 4px 0 #ff9595; }
+  form.token-input__form.error .submission-error {
+    display: block; }
+  form.token-input__form.pending .submit .fa-spinner {
+    display: block; }
+  form.token-input__form.pending .submit span {
+    display: none; }
 
 .controls {
   overflow: hidden;

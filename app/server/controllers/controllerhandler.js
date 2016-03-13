@@ -7,7 +7,6 @@ module.exports = {
 	},
 
 	onControl: function (message) {
-		console.log('control: ', message, this.token);
 		this.broadcast.emit('control press', {
 			message: message,
 			token: this.token

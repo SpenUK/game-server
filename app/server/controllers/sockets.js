@@ -60,7 +60,8 @@ var requestToken = function () {
 
 var onControlDown = function (message) {
 	// console.log('control-down:', message, this.token);
-	this.broadcast.emit('control down', {
+	// this.broadcast.emit('control down', {
+	this.to(this.hostToken).emit('control down', {
 		message: message,
 		token: this.token
 	});
@@ -68,7 +69,7 @@ var onControlDown = function (message) {
 
 var onControlUp = function (message) {
 	// console.log('control-up:', message, this.token);
-	this.broadcast.emit('control up', {
+	this.to(this.hostToken).emit('control up', {
 		message: message,
 		token: this.token
 	});

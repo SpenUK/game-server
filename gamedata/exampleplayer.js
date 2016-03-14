@@ -2,20 +2,20 @@
 
 var player = {
 	spriteMap: {
-		src: 'images/examplePlayerSpriteMap.png',
-		tilesX: 5,
-		tilesY: 4,
-		tileSize: 50,
-		height: 200,
-		width: 250
+		src: 'images/3264player.png',
+		tilesX: 1,
+		tilesY: 2,
+		tileSize: 32,
+		height: 64,
+		width: 32
 	},
-	tileSize: 50,
-	width: 50,
-	height: 50,
+	tileSize: 32,
+	width: 32,
+	height: 64,
 	location: {
 		map: 'start',
-		x: 2,
-		y: 2
+		x: 6,
+		y: 6
 	}
 };
 

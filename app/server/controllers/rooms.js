@@ -50,8 +50,6 @@ var roomController = {
 
 		} else if (room.connections.length < this.roomCapacity) {
 
-			controllerSocket.join(token);
-
 			room.connections.push(controllerSocket);
 
 			room.host.emit('controller joined');

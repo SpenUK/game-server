@@ -7,11 +7,13 @@ var player = {
 		tilesY: 2,
 		tileSize: 32,
 		height: 64,
-		width: 32
+		width: 32,
+		frameRate: 100
 	},
 	tileSize: 32,
-	width: 32,
-	height: 64,
+	width: 1,
+	height: 2,
+	offsetY: -1,
 	location: {
 		map: 'start',
 		x: 6,

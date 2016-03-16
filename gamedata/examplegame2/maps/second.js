@@ -36,7 +36,7 @@ module.exports = {
 	],
 
 	portals: [
-		{location:31, map: 'start', x: 5, y: 5},
+		{location:31, map: 'start', x: 15, y: 17},
 		{location:32, map: 'third', x: 3, y: 7}
 	]
 };

@@ -3,34 +3,43 @@
 module.exports = {
 	title: 'third',
 	tileSet: {
-		src: 'images/exampleTileSet.png',
-		tilesX: 4,
-		tilesY: 2,
-		tileSize: 50
+		src: 'images/rpg-tiles.png',
+		tilesX: 9,
+		tilesY: 6,
+		tileSize: 32
 	},
-	tilesX: 10,
+	tilesX: 26,
 	tilesY: 10,
-	tileSize: 50,
+	tileSize: 32,
 	tileMap: [
-		0,0,0,0,0,0,0,0,0,0,
-		0,1,1,1,1,1,1,1,1,0,
-		0,1,1,1,1,1,1,3,1,0,
-		0,1,1,1,3,1,1,1,1,0,
-		0,1,1,1,1,1,1,1,1,0,
-		0,1,1,1,1,1,1,1,1,0,
-		0,1,1,1,1,1,1,1,1,0,
-		0,1,1,1,3,1,1,1,1,0,
-		0,1,1,1,1,1,1,3,1,0,
-		0,0,0,0,0,0,0,0,0,0
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+		0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,
+		0,0,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,1,1,0,
+		0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,0,
+		4,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+		5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+		0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+		0,0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+		0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,0,0,0,0
 	],
 	tileTypes: [
-		{passable: false, base: 1, props: 0, cover: 0},
-		{passable: true, base: 2, props: 0, cover: 0},
-		{passable: false, base: 2, props: 5, cover: 0},
-		{passable: true, base: 2, props: 4, cover: 0}
+		{blocker: 1111, base: 30, props: 0, cover: 0},
+		{blocker: false, base: 1, props: 0, cover: 0},
+		{blocker: false, base: 1, props: 0, cover: 0, portal: 0},
+		{blocker: false, base: 1, props: 0, cover: 0, portal: 1},
+		{blocker: false, base: 1, props: 0, cover: 0, portal: 2},
+		{blocker: false, base: 1, props: 0, cover: 0, portal: 3}
 	],
 	eventTiles: [
-		{tile:6, target: {map: 'second', tile: 20 }},
+		{tile:6, target: {map: 'start', tile: 20 }},
 		{tile:49, target: {map: 'third', tile: 20 }}
+	],
+
+	portals: [
+		{location:31, map: 'start', x: 30, y: 1},
+		{location:31, map: 'start', x: 31, y: 1},
+		{location:32, map: 'second', x: 9, y: 4},
+		{location:32, map: 'second', x: 9, y: 5}
 	]
 };

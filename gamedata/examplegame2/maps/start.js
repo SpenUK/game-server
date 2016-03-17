@@ -13,7 +13,7 @@ module.exports = {
 	tileSize: 32,
 	tileMap: [
 		1, 15,28,29,28,29,30,31,28,29,28,29,28,29,12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,15,28,29,28,29,30,31,28,29,12, 1,
-		15,23,36,37,36,37,38,39,36,37,36,37,36,37,27,12, 1, 1, 1, 1, 1, 1, 1, 1,15,23,36,37,36,37,38,39,36,37,27,12,
+		15,23,36,37,36,37,38,39,36,37,36,37,36,37,27,12, 1, 1, 1, 1, 1, 1, 1, 1,15,23,36,37,36,37,42,43,36,37,27,12,
 		16,33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,26,11, 1, 1, 1, 1, 1, 1, 1,15,23,33, 1, 1, 1, 1, 1, 1, 1, 1,26,11,
 		17, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,10, 1, 1, 1, 1, 1, 1,15,23,33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,10,
 		17, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,10, 1, 1, 1, 1, 1, 1,16,33, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,10,
@@ -83,10 +83,12 @@ module.exports = {
 		{blocker: 1111, base: 48, props: 0, cover: 0, portal: false},
 		{blocker: 1111, base: 49, props: 0, cover: 0, portal: false},
 		{blocker: 1010, base: 50, props: 0, cover: 0, portal:     0},
-		{blocker: 1001, base: 51, props: 0, cover: 0, portal:     0},
+		{blocker: 1001, base: 51, props: 0, cover: 0, portal:     1},
 
 		{blocker: 1111, base: 52, props: 0, cover: 0, portal: false},
-		{blocker:    0, base: 53, props: 0, cover: 0, portal: false}
+		{blocker:    0, base: 53, props: 0, cover: 0, portal: false},
+		{blocker: 1010, base: 50, props: 0, cover: 0, portal:     2},
+		{blocker: 1001, base: 51, props: 0, cover: 0, portal:     3}
 	],
 
 	eventTiles: [
@@ -96,6 +98,8 @@ module.exports = {
 
 	portals: [
 		{location:31, map: 'second', x: 4, y: 9},
-		{location:32, map: 'third', x: 9, y: 4}
+		{location:32, map: 'second', x: 5, y: 9},
+		{location:31, map: 'third', x: 20, y: 9},
+		{location:32, map: 'third', x: 21, y: 9}
 	]
 };

@@ -1,5 +1,8 @@
+'use strict';
+
 var tokenController = require('./tokens');
 var roomController = require('./rooms');
+var gameController = require('./game');
 var controllerSocketHandler = require('./controllerhandler');
 
 var displayInitialize = function () {
@@ -9,6 +12,9 @@ var displayInitialize = function () {
 
   	if (hosting) {
   		this.emit('token created', this.token);
+
+  		// set up game specific events
+		gameController.applySocket(this);
   	};
 
   	this.removeListener('disconnect', onDisconnect);

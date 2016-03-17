@@ -20,8 +20,6 @@ setViewEngine(app);
 app.use(express.static('app/public'));
 app.set('views', 'app/server' + '/views');
 
-console.log(__dirname);
-
 app.use(router);
 
 var socketController = require('./controllers/sockets');

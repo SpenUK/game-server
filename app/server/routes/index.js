@@ -1,5 +1,6 @@
 var mapData = require('../../../gamedata/examplegame2/game'),
-	playerData = require('../../../gamedata/exampleplayer');
+	playerData = require('../../../gamedata/exampleplayer'),
+	npcData = require('../../../gamedata/npcs/npcs');
 
 exports.display = function(req, res){
 	var stylesheets = [
@@ -20,6 +21,7 @@ exports.display = function(req, res){
 		scripts: scripts,
 		initialData: JSON.stringify({
 			map: mapData,
+			npcs: npcData,
 			player: playerData
 		})
 	});

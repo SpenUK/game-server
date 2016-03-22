@@ -3,6 +3,7 @@
 .DS_Store
 
 client/
+gamedata/**/tiled/
 
 node_modules
 npm-debug.log

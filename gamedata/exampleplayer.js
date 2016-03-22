@@ -16,8 +16,8 @@ var player = {
 	offsetY: -1,
 	location: {
 		map: 'start',
-		x: 6,
-		y: 6
+		x: 4,
+		y: 5
 	}
 };
 

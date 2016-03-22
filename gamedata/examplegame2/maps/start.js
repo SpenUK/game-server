@@ -96,6 +96,11 @@ module.exports = {
 		{location:32, target: {map: 'third', tile: 20 }}
 	],
 
+	npcs: [
+		{ref: 'npc-1', x: 3, y: 5},
+		{ref: 'npc-2', x: 6, y: 8}
+	],
+
 	portals: [
 		{location:31, map: 'second', x: 4, y: 9},
 		{location:32, map: 'second', x: 5, y: 9},

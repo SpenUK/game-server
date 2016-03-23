@@ -33,21 +33,6 @@
                 }, 
                 {
                  "height":32,
-                 "id":4,
-                 "name":"portal-1",
-                 "properties":
-                    {
-                     "target":"{map: 'second', x: 5, y: 10}"
-                    },
-                 "rotation":0,
-                 "type":"portal",
-                 "visible":true,
-                 "width":32,
-                 "x":128,
-                 "y":32
-                }, 
-                {
-                 "height":32,
                  "id":6,
                  "name":"npc-2",
                  "properties":
@@ -60,51 +45,6 @@
                  "width":32,
                  "x":352,
                  "y":384
-                }, 
-                {
-                 "height":32,
-                 "id":7,
-                 "name":"portal-2",
-                 "properties":
-                    {
-                     "target":"{map: 'second', x: 6, y: 10}"
-                    },
-                 "rotation":0,
-                 "type":"portal",
-                 "visible":true,
-                 "width":32,
-                 "x":160,
-                 "y":32
-                }, 
-                {
-                 "height":32,
-                 "id":8,
-                 "name":"portal-3",
-                 "properties":
-                    {
-                     "target":"{map: 'third', x: 4, y: 10}"
-                    },
-                 "rotation":0,
-                 "type":"portal",
-                 "visible":true,
-                 "width":32,
-                 "x":320,
-                 "y":32
-                }, 
-                {
-                 "height":32,
-                 "id":9,
-                 "name":"portal-4",
-                 "properties":
-                    {
-                     "target":"{map: 'third', x: 5, y: 10}"
-                    },
-                 "rotation":0,
-                 "type":"portal",
-                 "visible":true,
-                 "width":32,
-                 "x":352,
-                 "y":32
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -126,7 +66,7 @@
         }, 
         {
          "draworder":"topdown",
-         "height":16,
+         "height":0,
          "name":"Collisions",
          "objects":[
                 {
@@ -786,7 +726,7 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":193,
+                 "x":192,
                  "y":192
                 }, 
                 {
@@ -816,7 +756,7 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":193,
+                 "x":192,
                  "y":224
                 }, 
                 {
@@ -891,7 +831,7 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":193,
+                 "x":192,
                  "y":160
                 }, 
                 {
@@ -966,7 +906,7 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":193,
+                 "x":192,
                  "y":96
                 }, 
                 {
@@ -1026,7 +966,7 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":193,
+                 "x":192,
                  "y":128
                 }, 
                 {
@@ -1436,12 +1376,92 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
+         "visible":false,
+         "width":0,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":16,
+         "name":"portals",
+         "objects":[
+                {
+                 "height":32,
+                 "id":119,
+                 "name":"portal-3",
+                 "properties":
+                    {
+                     "map":"third",
+                     "x":"2",
+                     "y":"15"
+                    },
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":32,
+                 "x":320,
+                 "y":32
+                }, 
+                {
+                 "height":32,
+                 "id":120,
+                 "name":"portal-4",
+                 "properties":
+                    {
+                     "map":"third",
+                     "x":"3",
+                     "y":"15"
+                    },
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":32,
+                 "x":352,
+                 "y":32
+                }, 
+                {
+                 "height":32,
+                 "id":121,
+                 "name":"portal-2",
+                 "properties":
+                    {
+                     "map":"second",
+                     "x":"13",
+                     "y":"15"
+                    },
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":32,
+                 "x":160,
+                 "y":32
+                }, 
+                {
+                 "height":32,
+                 "id":122,
+                 "name":"portal-1",
+                 "properties":
+                    {
+                     "map":"second",
+                     "x":"12",
+                     "y":"15"
+                    },
+                 "rotation":0,
+                 "type":"portal",
+                 "visible":true,
+                 "width":32,
+                 "x":128,
+                 "y":32
+                }],
+         "opacity":1,
+         "type":"objectgroup",
          "visible":true,
          "width":16,
          "x":0,
          "y":0
         }],
- "nextobjectid":119,
+ "nextobjectid":123,
  "orientation":"orthogonal",
  "properties":
     {

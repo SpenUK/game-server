@@ -9,6 +9,8 @@
   "dependencies": {
     "express": "^4.11.2",
     "express-handlebars": "^2.0.1",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.5",
     "socket.io": "latest",
     "underscore": "^1.8.3"
   },

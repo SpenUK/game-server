@@ -5,7 +5,8 @@ body {
 
 .controller {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .token-input {
   position: absolute;
@@ -138,6 +139,18 @@ form.token-input__form {
     -ms-user-select: none;
     user-select: none;
     outline: 0; }
+    .controls .control.b-control div.button {
+      background-color: #c34646;
+      font-size: 2em;
+      box-shadow: 0 6px #7b2828; }
+      .controls .control.b-control div.button:active {
+        box-shadow: 0 2px #7b2828; }
+    .controls .control.a-control div.button {
+      background-color: #2db43a;
+      font-size: 2em;
+      box-shadow: 0 6px #196220; }
+      .controls .control.a-control div.button:active {
+        box-shadow: 0 2px #196220; }
     .controls .control div.button {
       background-color: rgba(0, 0, 0, 0.2);
       text-align: center;
@@ -149,10 +162,13 @@ form.token-input__form {
         box-shadow: 0 2px rgba(0, 0, 0, 0.4); }
     .controls .control p {
       line-height: 100px;
-      margin: 0; }
+      color: whitesmoke;
+      margin: 0;
+      text-shadow: 0 4px rgba(0, 0, 0, 0.4);
+      font-weight: bold; }
     .controls .control i {
       line-height: 100px;
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0 6px rgba(0, 0, 0, 0.4); }
+      color: whitesmoke;
+      text-shadow: 0 5px rgba(0, 0, 0, 0.4); }
 
 /*# sourceMappingURL=controller.css.map */

@@ -14,6 +14,10 @@ var player = {
 	width: 1,
 	height: 2,
 	offsetY: -1,
+	offsetX: 0,
+	zIndex: 2,
+	sourceX: 0,
+	sourceY: 0,
 	location: {
 		map: 'start',
 		x: 4,

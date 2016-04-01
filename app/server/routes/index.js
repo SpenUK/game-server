@@ -1,4 +1,4 @@
-var mapData = require('../../../gamedata/examplegame2/game'),
+var mapCache = require('../controllers/mapcache'),
 	playerData = require('../../../gamedata/exampleplayer'),
 	npcData = require('../../../gamedata/npcs/npcs');
 
@@ -15,14 +15,25 @@ exports.display = function(req, res){
 		'/js/display.js',
 	];
 
+	var maps = [
+		mapCache.getClientMap('start'),
+		mapCache.getClientMap('second'),
+		mapCache.getClientMap('third'),
+		mapCache.getClientMap('third-shop-one'),
+		mapCache.getClientMap('third-shop-two')
+	];
+
 	res.render('display', {
 		title: 'Display',
 		stylesheets: stylesheets,
 		scripts: scripts,
 		initialData: JSON.stringify({
-			map: mapData,
 			npcs: npcData,
-			player: playerData
+			player: playerData,
+			map: {
+				defaultMap: 'start', // will be replace by player data eventually, so for now this is fine
+				maps: maps
+			}
 		})
 	});
 };

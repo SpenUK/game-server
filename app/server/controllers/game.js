@@ -41,7 +41,7 @@ module.exports = {
 		// depending on interaction type, update controller view.
 		// means keeping track of current controller view type - client or server?
 		// server could mean only sending new views when needed?
-		// console.log('player interaction', data.mapName, data.x, data.y, data.entityId);
+		console.log('player interaction', data.mapName, data.x, data.y, data.entityId);
 		// also need to validate that this interaction is available...
 		// !!mapCache.getServerMap(data.mapName);
 

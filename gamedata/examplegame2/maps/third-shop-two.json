@@ -461,7 +461,7 @@
                 {
                  "height":32,
                  "id":55,
-                 "name":"vendor-1",
+                 "name":"10002",
                  "properties":
                     {
                      "vendor_id":"1112"
@@ -479,8 +479,50 @@
          "width":0,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "height":6,
+         "name":"interactions",
+         "objects":[
+                {
+                 "height":32,
+                 "id":56,
+                 "name":"interaction",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"2",
+                 "visible":true,
+                 "width":32,
+                 "x":64,
+                 "y":128
+                }, 
+                {
+                 "height":32,
+                 "id":57,
+                 "name":"interaction",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"2",
+                 "visible":true,
+                 "width":32,
+                 "x":64,
+                 "y":96
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "width":6,
+         "x":0,
+         "y":0
         }],
- "nextobjectid":56,
+ "nextobjectid":58,
  "orientation":"orthogonal",
  "properties":
     {

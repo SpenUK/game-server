@@ -40,7 +40,6 @@ app.set('views', 'app/server' + '/views');
 
 // app.connect('mongodb://localhost/gamedata');
 
-
 app.use(router);
 
 var gameController = require('./controllers/game');

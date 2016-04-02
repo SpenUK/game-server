@@ -36,7 +36,7 @@
                      "vendor_id":"1111"
                     },
                  "rotation":0,
-                 "type":"vendor",
+                 "type":"1",
                  "visible":true,
                  "width":32,
                  "x":96,
@@ -45,13 +45,13 @@
                 {
                  "height":32,
                  "id":15,
-                 "name":"boxes-info",
+                 "name":"boxes-info-2",
                  "properties":
                     {
                      "message":"Just a bunch of boxes"
                     },
                  "rotation":0,
-                 "type":"info",
+                 "type":"4",
                  "visible":true,
                  "width":32,
                  "x":64,
@@ -60,13 +60,13 @@
                 {
                  "height":32,
                  "id":16,
-                 "name":"boxes-info",
+                 "name":"boxes-info-1",
                  "properties":
                     {
                      "message":"Just a bunch of boxes"
                     },
                  "rotation":0,
-                 "type":"info",
+                 "type":"3",
                  "visible":true,
                  "width":32,
                  "x":32,
@@ -81,7 +81,7 @@
                      "vendor_id":"1111"
                     },
                  "rotation":0,
-                 "type":"vendor",
+                 "type":"1",
                  "visible":true,
                  "width":32,
                  "x":96,
@@ -89,7 +89,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":false,
+         "visible":true,
          "width":0,
          "x":0,
          "y":0
@@ -593,13 +593,13 @@
                 {
                  "height":32,
                  "id":49,
-                 "name":"vendor-1",
+                 "name":"10003",
                  "properties":
                     {
                      "vendor_id":"1111"
                     },
                  "rotation":0,
-                 "type":"vendor",
+                 "type":"",
                  "visible":true,
                  "width":32,
                  "x":128,

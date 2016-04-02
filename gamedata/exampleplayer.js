@@ -2,15 +2,17 @@
 
 var player = {
 	spriteMap: {
-		src: 'images/3264player.png',
-		tilesX: 1,
-		tilesY: 2,
-		tileSize: 32,
-		height: 64,
-		width: 32,
+		src: 'images/directional-player.png',
+		tilesX: 10,
+		tilesY: 8,
+		tileheight: 32,
+		tilewidth: 32,
+		height: 256,
+		width: 320,
 		frameRate: 100
 	},
-	tileSize: 32,
+	tileheight: 32,
+	tilewidth: 32,
 	width: 1,
 	height: 2,
 	offsetY: -1,

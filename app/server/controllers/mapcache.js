@@ -5,6 +5,7 @@ var _ = require('underscore');
 
 function parseClientMap (name, map) {
 	map.name = name;
+
 	return {
 		name: map.name,
 		height: map.height,
@@ -56,7 +57,8 @@ function getInteractions (map) {
 	return _.map(layer.objects, function (interaction) {
 		// console.log(interaction.name);
 		return {
-			id: interaction.properties.id, // or could use interaction.name?
+			id: interaction.type, // or could use interaction.name?
+			name: interaction.name,
 			// could grab the details from a hash here?
 			x: Math.floor(interaction.x / tilewidth),
 			y: Math.floor(interaction.y / tileheight)
@@ -110,6 +112,7 @@ function getTileLayers (map) {
 
 		return _.extend({}, layer, {
 			tiles: _.chain(layer.data).map(function (tile, i) {
+
 				var x = i % width,
 					y = parseInt(i / width),
 					tilesetData = tileSrcMap[tile],
@@ -160,13 +163,17 @@ function getPortals (map) {
 
 function getObjectLayers (map) {
 	return _.chain(map.layers).filter(function (layer) {
-		return layer.type === 'objectgroup' && layer.name.toLowerCase() !== 'collisions' && layer.name.toLowerCase() !== 'interactions' && layer.name.toLowerCase() !== 'portals';
+		return layer.type === 'objectgroup'
+			&& layer.name.toLowerCase() !== 'collisions'
+			&& layer.name.toLowerCase() !== 'interactions'
+			&& layer.name.toLowerCase() !== 'portals';
 	});
 }
 
 function getCollisionLayer (map) {
 	var layer = _.first(_.filter(map.layers, function (layer) {
-		return layer.type === 'objectgroup' && layer.name.toLowerCase() === 'collisions';
+		return layer.type === 'objectgroup'
+			&& layer.name.toLowerCase() === 'collisions';
 	}));
 
 	return _.extend({}, {
@@ -213,7 +220,8 @@ function getTiles (map) {
 					x: tilesetIndex % tilesetData.width,
 					y: Math.floor(tilesetIndex / tilesetData.width),
 				},
-				tileSize: 32,
+				tilewidth: map.tilewidth,
+				tileheight: map.tileheight,
 				width: 1,
 				height: 1,
 				offsetY: 0,

@@ -1,8 +1,11 @@
 'use strict';
 
+var _ = require('underscore');
 var mapCache = require('../controllers/mapcache');
-var mongoose = require('mongoose');
+var datastore = require('../data/data');
+// var mongoose = require('mongoose');
 // var Map = require('../models/map');
+// var Entity = require('../db/models/entity');
 
 module.exports = {
 
@@ -41,16 +44,23 @@ module.exports = {
 		// depending on interaction type, update controller view.
 		// means keeping track of current controller view type - client or server?
 		// server could mean only sending new views when needed?
-		console.log('player interaction', data.mapName, data.x, data.y, data.entityId);
+		// console.log('player interaction', data.mapName, data.x, data.y, data.entityId);
 		// also need to validate that this interaction is available...
 		// !!mapCache.getServerMap(data.mapName);
+		var map = mapCache.getServerMap(data.mapName);
 
-		// Map.findOne({'name': data.mapName}, function(err,doc){
-		// 	if (err) {
-		// 		console.log(err);
-		// 		return false;
-		// 	}
-		// 	console.log('doc:' + doc);
-		// });
+		if (map && map.interactions && map.interactions.length) {
+			var interaction = _.findWhere(map.interactions, {
+				x: data.x, y: data.y
+			});
+
+			if (interaction && interaction.id) {
+				var message = datastore.interactions[interaction.id];
+				console.log('interaction test', message);
+				this.emit('interaction test', message);
+			} else {
+				console.log(interaction ? 'no id' : 'not found');
+			}
+		}
 	}
 };

@@ -2,13 +2,13 @@
 
 var player = {
 	spriteMap: {
-		src: 'images/directional-player.png',
-		tilesX: 10,
+		src: 'images/fatty.png',
+		tilesX: 4,
 		tilesY: 8,
 		tileheight: 32,
 		tilewidth: 32,
 		height: 256,
-		width: 320,
+		width: 128,
 		frameRate: 100
 	},
 	tileheight: 32,

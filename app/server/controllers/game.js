@@ -3,6 +3,7 @@
 var _ = require('underscore');
 var mapCache = require('../controllers/mapcache');
 var datastore = require('../data/data');
+var interactionsController = require('./interactions');
 // var mongoose = require('mongoose');
 // var Map = require('../models/map');
 // var Entity = require('../db/models/entity');
@@ -55,9 +56,7 @@ module.exports = {
 			});
 
 			if (interaction && interaction.id) {
-				var message = datastore.interactions[interaction.id];
-				console.log('interaction test', message);
-				this.emit('interaction test', message);
+				interactionsController.handleInteraction.call(this, interaction);
 			} else {
 				console.log(interaction ? 'no id' : 'not found');
 			}

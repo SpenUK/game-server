@@ -1,20 +1,20 @@
 module.exports = {
-	'1': {
+	'store': {
 		message: 'vendor interaction',
 		testColor: 'tomato'
 	},
 
-	'2': {
+	'chat': {
 		message: 'chat interaction',
 		testColor: 'cyan'
 	},
 
-	'3': {
+	'info': {
 		message: 'info interaction',
 		testColor: 'white'
-	}
+	},
 
-	'4': {
+	'find': {
 		message: 'find interaction',
 		testColor: 'green'
 	}

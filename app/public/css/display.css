@@ -1,6 +1,16 @@
 body {
   background-color: #2878a0; }
 
+.display {
+  position: relative; }
+
+.game-ui {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 .game {
   position: relative;
   margin: 0 auto;
@@ -16,14 +26,6 @@ body {
     position: absolute;
     left: 0;
     top: 0; }
-    .game .game-canvas#base {
-      z-index: 2000; }
-    .game .game-canvas#props {
-      z-index: 2002; }
-    .game .game-canvas#player {
-      z-index: 2002; }
-    .game .game-canvas#cover {
-      z-index: 2003; }
 
 .modal {
   position: fixed;
@@ -112,5 +114,35 @@ body {
   width: 275px;
   background-color: white;
   border: 5px solid rgba(0, 0, 0, 0.2); }
+
+.store {
+  background-color: whitesmoke;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding: 10px; }
+  .store .name {
+    margin: 0.4em auto;
+    text-align: center;
+    color: #505050; }
+
+.inventory:before, .inventory:after {
+  content: " ";
+  display: table; }
+.inventory:after {
+  clear: both; }
+.inventory .inventory-item {
+  float: left;
+  width: 25%;
+  text-align: center; }
+  .inventory .inventory-item .name {
+    font-weight: bold;
+    margin: 0.2em auto; }
+  .inventory .inventory-item .image {
+    margin: 0 auto;
+    display: block; }
+  .inventory .inventory-item .price {
+    opacity: 1;
+    margin: 0.2em auto; }
 
 /*# sourceMappingURL=display.css.map */

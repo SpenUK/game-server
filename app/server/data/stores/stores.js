@@ -9,9 +9,9 @@ module.exports = {
 			itemId: 2, // 'Green Apple'
 			price: 40 // range?
 		}, {
-			itemId: 3, // 'Block of Weird Cheese'
-			price: 150 // range?
-		}, {
+		// 	itemId: 3, // 'Block of Weird Cheese'
+		// 	price: 150 // range?
+		// }, {
 			itemId: 4, // 'Swan Pie'
 			price: 2500 // range?
 		}]

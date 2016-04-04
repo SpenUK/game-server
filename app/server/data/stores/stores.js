@@ -3,20 +3,16 @@ module.exports = {
 		name: 'General goods store',
 		type: 1,
 		staples: [{
-			name: 'Red Apple',
-			itemId: 1,
+			itemId: 1, // 'Red Apple'
 			price: 50 // range?
 		}, {
-			name: 'Green Apple',
-			itemId: 2,
+			itemId: 2, // 'Green Apple'
 			price: 40 // range?
 		}, {
-			name: 'Block of Weird Cheese',
-			itemId: 3,
+			itemId: 3, // 'Block of Weird Cheese'
 			price: 150 // range?
 		}, {
-			name: 'Swan Pie',
-			itemId: 4,
+			itemId: 4, // 'Swan Pie'
 			price: 2500 // range?
 		}]
 	},
@@ -24,12 +20,10 @@ module.exports = {
 		name: 'Vape store',
 		type: 1,
 		staples: [{
-			name: 'Twatty cloud maker 3000',
-			itemId: 5,
+			itemId: 5, // 'Twatty cloud maker 3000'
 			price: 30000
 		}, {
-			name: '"I vape because I am" teeshirt',
-			itemId: 6,
+			itemId: 6, // '"I vape because I am" teeshirt'
 			price: 600
 		}],
 	}

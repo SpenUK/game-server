@@ -4,6 +4,8 @@ module.exports = {
 
 	applySocket: function (socket) {
 		socket.on(this.namespace + ': onControl', this.onControl.bind(socket));
+
+		socket.on('purchase-item', this.onPurchaseItem.bind(socket));
 	},
 
 	onControl: function (message) {
@@ -11,5 +13,10 @@ module.exports = {
 			message: message,
 			token: this.token
 		});
+	},
+
+	onPurchaseItem: function (data) {
+		console.log('purchase-item', data);
 	}
+
 };

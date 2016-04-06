@@ -31,14 +31,23 @@ module.exports = {
 
 	applySocket: function (socket) {
 		socket.on(this.namespace + ':battle:action', this.onBattleAction.bind(socket));
-		console.log('applying socket');
+
 		socket.on('player-interaction', this.onPlayerInteraction.bind(socket));
+
+		// socket.on('purchase-item', this.onPurchaseItem.bind(socket));
+		socket.on('purchase-item', function () {
+			console.log('poop');
+		});
 	},
 
 	onBattleAction: function (data) {
 		this.broadcast.emit('battle:response', {
 			message: 'battle response'
 		});
+	},
+
+	onPurchaseItem: function (data) {
+		console.log('data----', !!data, data);
 	},
 
 	onPlayerInteraction: function (data) {

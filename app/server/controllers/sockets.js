@@ -35,6 +35,12 @@ var controllerInitialize =  function (token) {
   		this.emit('controller joined');
   		this.on('control:down', onControlDown.bind(this));
   		this.on('control:up', onControlUp.bind(this));
+  		this.on('purchase-item', function () {
+  			console.log('purchase-item - sockets');
+  		});
+  		this.on('purchase:item', function () {
+  			console.log('purchase:item - sockets');
+  		});
 
   		controllerSocketHandler.applySocket(this);
   	} else {

@@ -266,6 +266,9 @@
       float: left;
       padding-left: 0px;
       padding-top: 0px; } }
+html, body {
+  height: 100%; }
+
 body {
   background-color: #2878a0;
   -webkit-tap-highlight-color: transparent;
@@ -393,6 +396,9 @@ form.token-input__form {
   -ms-user-select: none;
   user-select: none;
   outline: 0; }
+  .controls .control-row {
+    max-height: 50%;
+    overflow: hidden; }
   .controls .control {
     width: 100px;
     height: 100px;
@@ -440,73 +446,39 @@ form.token-input__form {
       color: whitesmoke;
       text-shadow: 0 5px rgba(0, 0, 0, 0.4); }
 
-.controls {
-  overflow: hidden;
-  padding-bottom: 6px;
-  height: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  outline: 0; }
-  .controls .item-details {
-    text-align: center; }
-    .controls .item-details .name {
-      font-size: 1.8em;
-      font-weight: bold; }
-    .controls .item-details .item-image {
-      margin: 0 auto;
-      display: block; }
-  .controls .control {
-    width: 100px;
-    height: 100px;
-    margin: 5px auto;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    outline: 0; }
-    .controls .control.back-control {
-      font-size: 0.7em;
-      margin-bottom: 20px; }
-      .controls .control.back-control div.button {
-        background-color: #c34646;
-        font-size: 2em;
-        box-shadow: 0 6px #7b2828; }
-        .controls .control.back-control div.button:active {
-          box-shadow: 0 2px #7b2828; }
-    .controls .control.select-control, .controls .control.buy-control {
-      font-size: 0.7em;
-      margin-bottom: 20px; }
-      .controls .control.select-control div.button, .controls .control.buy-control div.button {
-        background-color: #2db43a;
-        font-size: 2em;
-        box-shadow: 0 6px #196220;
-        display: inline-block;
-        width: 100%; }
-        .controls .control.select-control div.button:active, .controls .control.buy-control div.button:active {
-          box-shadow: 0 2px #196220; }
-    .controls .control div.button {
-      background-color: rgba(0, 0, 0, 0.2);
-      text-align: center;
-      font-size: 2em;
-      box-shadow: 0 6px rgba(0, 0, 0, 0.4);
-      border-radius: 6px; }
-      .controls .control div.button:active {
-        box-shadow: 0 2px rgba(0, 0, 0, 0.4); }
-    .controls .control p {
-      line-height: 100px;
-      color: whitesmoke;
-      margin: 0;
-      text-shadow: 0 4px rgba(0, 0, 0, 0.4);
-      font-weight: bold; }
-    .controls .control i {
-      line-height: 100px;
-      color: whitesmoke;
-      text-shadow: 0 5px rgba(0, 0, 0, 0.4); }
+.controls .item-details {
+  min-height: 1px;
+  text-align: center; }
+  .controls .item-details .name {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0.4em;
+    text-overflow: ellipsis;
+    word-wrap: inherit;
+    overflow: hidden;
+    white-space: nowrap; }
+  .controls .item-details .item-image {
+    margin: 0 auto;
+    display: block; }
+.controls .control.back-control {
+  font-size: 0.7em;
+  margin-bottom: 20px; }
+  .controls .control.back-control div.button {
+    background-color: #c34646;
+    font-size: 2em;
+    box-shadow: 0 6px #7b2828; }
+    .controls .control.back-control div.button:active {
+      box-shadow: 0 2px #7b2828; }
+.controls .control.select-control, .controls .control.buy-control {
+  font-size: 0.7em;
+  margin-bottom: 20px; }
+  .controls .control.select-control div.button, .controls .control.buy-control div.button {
+    background-color: #2db43a;
+    font-size: 2em;
+    box-shadow: 0 6px #196220;
+    display: inline-block;
+    width: 100%; }
+    .controls .control.select-control div.button:active, .controls .control.buy-control div.button:active {
+      box-shadow: 0 2px #196220; }
 
 /*# sourceMappingURL=controller.css.map */

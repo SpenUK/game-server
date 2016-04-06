@@ -9,7 +9,7 @@ function openStore (interaction) {
 	var storeData = datastore.stores[interaction.storeId];
 
 	var inventory = _.map(storeData.staples, function (item) {
-		return _.extend({}, datastore.items[item.itemId], _.omit(item, 'itemId'));
+		return _.extend({}, datastore.items[item.itemId], item);
 	});
 
 	var store = {

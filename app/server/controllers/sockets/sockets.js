@@ -1,21 +1,15 @@
 'use strict';
 
-var tokenController = require('./tokens');
-var roomController = require('./rooms');
-var gameController = require('./game');
-var gameControllerTest = require('./gamecontroller');
-var controllerSocketHandler = require('./controllerhandler');
+var tokenController = require('../tokens');
+var roomController = require('../rooms');
+var gameController = require('../game');
+var displaySocketHandler = require('./controllersockethandler');
+var controllerSocketHandler = require('./controllersockethandler');
 
 var displayInitialize = function () {
 	var hosting = roomController.hostRoom(this.token, this);
 
-  	this.display = true; // will migrate to isDisplay
-  	this.isDisplay = true;
-
-  	// if (gameControllerTest.games.length === 0) {
-  		var game = gameControllerTest.createGame();
-  		game.assignSocket(this);
-  	// }
+  	this.display = true;
 
   	if (hosting) {
   		this.emit('token created', this.token);
@@ -30,9 +24,7 @@ var displayInitialize = function () {
 };
 
 var controllerInitialize =  function (token) {
-
-	this.controller = true; // will migrate to isController
-	this.isController = true;
+	this.controller = true;
 
 	this.hostToken = token;
 

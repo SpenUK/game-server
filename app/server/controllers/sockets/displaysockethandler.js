@@ -1,38 +1,6 @@
-'use strict';
-
-var _ = require('underscore');
-var mapCache = require('../controllers/mapcache');
-var datastore = require('../data/data');
-var interactionsController = require('./interactions');
-// var mongoose = require('mongoose');
-// var Map = require('../models/map');
-// var Entity = require('../db/models/entity');
-
 module.exports = {
-
-	namespace: 'game',
-
-	initialize: function() {
-		this.cacheMaps();
-	},
-
-	cacheMaps: function () {
-		mapCache.setServerMap('start'),
-		mapCache.setServerMap('second'),
-		mapCache.setServerMap('third'),
-		mapCache.setServerMap('third-shop-one'),
-		mapCache.setServerMap('third-shop-two'),
-
-		mapCache.setClientMap('start'),
-		mapCache.setClientMap('second'),
-		mapCache.setClientMap('third'),
-		mapCache.setClientMap('third-shop-one'),
-		mapCache.setClientMap('third-shop-two');
-	},
-
 	applySocket: function (socket) {
-		socket.on(this.namespace + ':battle:action', this.onBattleAction.bind(socket));
-
+		socket.on('start battle', this.onBattleAction.bind(socket));
 		socket.on('player-interaction', this.onPlayerInteraction.bind(socket));
 	},
 
@@ -43,6 +11,7 @@ module.exports = {
 	},
 
 	onPurchaseItem: function (data) {
+
 		console.log('data----', !!data, data);
 	},
 

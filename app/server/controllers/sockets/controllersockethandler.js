@@ -1,8 +1,6 @@
-var datastore = require('../data/data');
+var datastore = require('../../data/data');
 
 module.exports = {
-
-	namespace: 'controller',
 
 	applySocket: function (socket) {
 		socket.on(this.namespace + ': onControl', this.onControl.bind(socket));

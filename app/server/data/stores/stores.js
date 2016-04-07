@@ -9,11 +9,30 @@ module.exports = {
 			itemId: 2, // 'Green Apple'
 			price: 40 // range?
 		}, {
-			itemId: 3, // 'Block of Weird Cheese'
-			price: 150 // range?
+
+			itemId: 1, // 'Green Apple'
+			price: 45 // range?
 		}, {
-			itemId: 4, // 'Swan Pie'
-			price: 2500 // range?
+			itemId: 2, // 'Green Apple'
+			price: 50 // range?
+		}, {
+			itemId: 2, // 'Green Apple'
+			price: 46 // range?
+		}, {
+			itemId: 1, // 'Green Apple'
+			price: 90 // range?
+		}, {
+			itemId: 1, // 'Green Apple'
+			price: 110 // range?
+		}, {
+			itemId: 1, // 'Green Apple'
+			price: 100 // range?
+		// }, {
+		// 	itemId: 3, // 'Block of Weird Cheese'
+		// 	price: 150 // range?
+		// }, {
+		// 	itemId: 4, // 'Swan Pie'
+		// 	price: 2500 // range?
 		}]
 	},
 	'10001' : {

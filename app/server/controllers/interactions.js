@@ -30,5 +30,3 @@ module.exports = {
 		}
 	}
 };
-
-// this.emit('interaction test', interaction);

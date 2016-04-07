@@ -1,21 +1,17 @@
 module.exports = {
 	'store': {
-		message: 'vendor interaction',
-		testColor: 'tomato'
+		message: 'vendor interaction'
 	},
 
 	'chat': {
-		message: 'chat interaction',
-		testColor: 'cyan'
+		message: 'chat interaction'
 	},
 
 	'info': {
-		message: 'info interaction',
-		testColor: 'white'
+		message: 'info interaction'
 	},
 
 	'find': {
-		message: 'find interaction',
-		testColor: 'green'
+		message: 'find interaction'
 	}
 };

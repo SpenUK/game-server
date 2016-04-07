@@ -21,9 +21,9 @@ var player = {
 	sourceX: 0,
 	sourceY: 0,
 	location: {
-		map: 'start',
-		x: 4,
-		y: 5
+		map: 'third',
+		x: 6,
+		y: 8
 	}
 };
 

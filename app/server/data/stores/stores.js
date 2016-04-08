@@ -1,42 +1,33 @@
 module.exports = {
 	'10000' : {
 		name: 'General goods store',
+		id: '10000',
 		type: 1,
 		staples: [{
 			itemId: 1, // 'Red Apple'
-			price: 50 // range?
 		}, {
 			itemId: 2, // 'Green Apple'
-			price: 40 // range?
 		}, {
-
 			itemId: 1, // 'Green Apple'
-			price: 45 // range?
 		}, {
 			itemId: 2, // 'Green Apple'
-			price: 50 // range?
 		}, {
 			itemId: 2, // 'Green Apple'
-			price: 46 // range?
 		}, {
 			itemId: 1, // 'Green Apple'
-			price: 90 // range?
 		}, {
 			itemId: 1, // 'Green Apple'
-			price: 110 // range?
 		}, {
 			itemId: 1, // 'Green Apple'
-			price: 100 // range?
 		// }, {
 		// 	itemId: 3, // 'Block of Weird Cheese'
-		// 	price: 150 // range?
 		// }, {
 		// 	itemId: 4, // 'Swan Pie'
-		// 	price: 2500 // range?
 		}]
 	},
 	'10001' : {
 		name: 'Vape store',
+		id: '10001',
 		type: 1,
 		staples: [{
 			itemId: 5, // 'Twatty cloud maker 3000'

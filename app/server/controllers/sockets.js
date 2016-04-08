@@ -6,54 +6,52 @@ var gameController = require('./game');
 var gameControllerTest = require('./gamecontroller');
 var controllerSocketHandler = require('./controllerhandler');
 
-var displayInitialize = function () {
-	var hosting = roomController.hostRoom(this.token, this);
+var displayInitialize = function (token) {
+	var game = gameControllerTest.createGame();
 
-  	this.display = true; // will migrate to isDisplay
-  	this.isDisplay = true;
-
-  	// if (gameControllerTest.games.length === 0) {
-  		var game = gameControllerTest.createGame();
-  		game.assignSocket(this);
-  	// }
-
-  	if (hosting) {
-  		this.emit('token created', this.token);
-
-  		// set up game specific events // display
-		gameController.applySocket(this);
-  	};
+	this.isDisplay = true;
+	game.assignSocket(this);
 
   	this.removeListener('disconnect', onDisconnect);
-
   	this.on('disconnect', onDisplayDisconnect.bind(this));
 };
 
 var controllerInitialize =  function (token) {
+	// console.log('controllerInitialize');
+	var game = gameControllerTest.games[token];
 
-	this.controller = true; // will migrate to isController
-	this.isController = true;
+	if (game) {
+		this.isController = true;
+		game.assignSocket(this);
+	}
 
-	this.hostToken = token;
+	this.removeListener('disconnect', onDisconnect);
+  	this.on('disconnect', onControllerDisconnect.bind(this));
 
-	console.log('controller init', token);
 
-  	var joined = roomController.joinRoom(token, this);
+	// this.controller = true; // will migrate to isController
+	// this.isController = true;
 
-  	if (joined === true) {
-  		this.emit('controller joined');
-  		this.on('control:down', onControlDown.bind(this));
-  		this.on('control:up', onControlUp.bind(this));
+	// this.hostToken = token;
 
-  		controllerSocketHandler.applySocket(this);
-  	} else {
-  		this.emit('controller rejected', joined.error);
-  	}
+	// console.log('controller init', token);
+
+ //  	var joined = roomController.joinRoom(token, this);
+
+ //  	if (joined === true) {
+ //  		this.emit('controller joined');
+ //  		this.on('control:down', onControlDown.bind(this));
+ //  		this.on('control:up', onControlUp.bind(this));
+
+ //  		controllerSocketHandler.applySocket(this);
+ //  	} else {
+ //  		this.emit('controller rejected', joined.error);
+ //  	}
 };
 
 var requestToken = function () {
 	if (this.display) {
-		this.emit('token generated', {
+		this.emit('token:generated', {
 			token: this.token
 		});
 	}
@@ -65,18 +63,18 @@ var requestHost = function (token) {
 	// 		token: this.token
 	// 	});
 	// }
-	console.log('requested host:', token);
+	// console.log('requested host:', token);
 }
 
 var onControlDown = function (message) {
-	this.to(this.hostToken).emit('control down', {
+	this.to(this.hostToken).emit('control:down', {
 		message: message,
 		token: this.token
 	});
 }
 
 var onControlUp = function (message) {
-	this.to(this.hostToken).emit('control up', {
+	this.to(this.hostToken).emit('control:up', {
 		message: message,
 		token: this.token
 	});
@@ -107,13 +105,13 @@ var onControllerDisconnect = function(socket){
 var onConnection = function (socket) {
 	socket.token = tokenController.getUniqueId();
 	tokenController.addToken(socket.token);
-	socket.emit('set token', socket.token);
+	socket.emit('token:set', socket.token);
 
-	socket.on('display initialize', displayInitialize.bind(socket));
+	socket.on('display:initialize', displayInitialize.bind(socket));
 
-	socket.on('controller initialize', controllerInitialize.bind(socket));
+	socket.on('controller:initialize', controllerInitialize.bind(socket));
 
-	socket.on('request token', requestToken.bind(socket));
+	socket.on('token:request', requestToken.bind(socket));
 
 	socket.on('disconnect', onDisconnect);
 }

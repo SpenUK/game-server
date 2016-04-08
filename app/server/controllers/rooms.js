@@ -52,7 +52,7 @@ var roomController = {
 
 			room.connections.push(controllerSocket);
 
-			room.host.emit('controller joined');
+			room.host.emit('controller:joined');
 
 			return true;
 
@@ -69,7 +69,7 @@ var roomController = {
 		var room = this.rooms[token];
 
 		if (room) {
-			room.host.emit('controller left', controllerSocket.id);
+			room.host.emit('controller:left');
 			this.rooms[token].connections = _.without(room.connections, controllerSocket);
 
 			return true;

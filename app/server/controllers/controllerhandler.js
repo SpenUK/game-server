@@ -23,15 +23,15 @@ module.exports = {
 	onPurchaseItem: function (data) {
 		var itemData = datastore.items[data.itemId];
 
-		if (itemData) {
-			console.log('purchase-item ', data.quantity + '*' + itemData.price + ' = ' + data.quantity * itemData.price);
-		} else {
-			console.log('purchase-item, item not found?');
-		}
+		// if (itemData) {
+		// 	console.log('purchase-item ', data.quantity + '*' + itemData.price + ' = ' + data.quantity * itemData.price);
+		// } else {
+		// 	console.log('purchase-item, item not found?');
+		// }
 	},
 
 	onStoreItemsPositionChange: function (data) {
-		console.log('onStoreItemsPositionChange', data);
+		// console.log('onStoreItemsPositionChange', data);
 		this.broadcast.emit('store items position changed', {
 			position: data.position
 		});

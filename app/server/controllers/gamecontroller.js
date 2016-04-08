@@ -112,6 +112,7 @@ var Game = {
 	},
 
 	openStore: function (interaction) {
+		console.log('open store');
 		var storeData = datastore.stores[interaction.storeId];
 
 		var inventory = _.map(storeData.staples, function (item) {

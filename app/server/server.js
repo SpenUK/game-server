@@ -50,5 +50,5 @@ socketController(io);
 
 server.listen(port);
 
-console.log("http server listening on %d", port);
+console.log("http server running node " + process.version + ", listening on %d", port);
 

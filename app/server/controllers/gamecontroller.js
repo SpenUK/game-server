@@ -13,6 +13,8 @@ var roomController = require('./rooms');
 var displaySocketEvents = require('./sockets/displaysockethandler');
 var controllerSocketEvents = require('./sockets/controllersockethandler');
 
+var Player = require('./player');
+
 var Game = {
 
 	create: function () {
@@ -34,6 +36,7 @@ var Game = {
 						'onControllerDisconnect');
 
 		this.sockets = {};
+		this.player = Player.create();
 	},
 
 	assignSocket: function (socket) {
@@ -144,11 +147,13 @@ var Game = {
 
 	onPurchaseItem: function (data) {
 		var itemData = datastore.items[data.itemId];
+		// let thing = 2;
 
 		if (itemData) {
-			// console.log('store:purchase-item ', data.quantity + '*' + itemData.price + ' = ' + data.quantity * itemData.price);
+			console.log('player money:', this.player.money);
+			console.log('store:purchase-item ', data.quantity + '*' + itemData.price + ' = ' + data.quantity * itemData.price);
 		} else {
-			// console.log('store:purchase-item, item not found?');
+			console.log('store:purchase-item, item not found?');
 		}
 	},
 
